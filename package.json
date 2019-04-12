@@ -1,0 +1,19 @@
+{
+  "name": "andrino_j_cms-sportcheck",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JorgeAndrino/Andrino_J_CMS-SportCheck.git"
+  },
+  "author": "Jorge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JorgeAndrino/Andrino_J_CMS-SportCheck/issues"
+  },
+  "homepage": "https://github.com/JorgeAndrino/Andrino_J_CMS-SportCheck#readme"
+}
