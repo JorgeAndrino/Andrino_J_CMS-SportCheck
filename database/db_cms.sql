@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 12-04-2019 a las 22:54:35
+-- Tiempo de generación: 15-04-2019 a las 18:37:31
 -- Versión del servidor: 5.7.24
 -- Versión de PHP: 7.2.14
 
@@ -172,7 +172,6 @@ CREATE TABLE IF NOT EXISTS `tbl_users` (
   `user_fname` varchar(30) NOT NULL,
   `user_email` varchar(80) NOT NULL,
   `user_password` varchar(10) NOT NULL,
-  `user_token` int(11) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
@@ -180,8 +179,8 @@ CREATE TABLE IF NOT EXISTS `tbl_users` (
 -- Volcado de datos para la tabla `tbl_users`
 --
 
-INSERT INTO `tbl_users` (`user_id`, `user_fname`, `user_email`, `user_password`, `user_token`) VALUES
-(1, 'George', 'admin@email.com', 'password', NULL);
+INSERT INTO `tbl_users` (`user_id`, `user_fname`, `user_email`, `user_password`) VALUES
+(1, 'George', 'admin@email.com', 'password');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

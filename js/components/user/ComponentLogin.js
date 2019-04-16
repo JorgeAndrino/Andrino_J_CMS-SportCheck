@@ -42,7 +42,6 @@ export default {
 
                     storageLock.setItem('current_user_id', response.data[1]);
                     storageLock.setItem('current_user_name', response.data[2]);
-                    storageLock.setItem('user_token', response.data[3]);
 
                     that.$router.push("/");
                 } else {
@@ -63,7 +62,6 @@ export default {
             let sessionData = new FormData();
 
             sessionData.append("user_id", storageLock.getItem('current_user_id'));
-            sessionData.append("user_token", storageLock.getItem('user_token'));
 
             axios({
                 method: 'post',
@@ -84,7 +82,7 @@ export default {
     },
 
     mounted() {
-        if(storageLock.getItem('current_user_id') && storageLock.getItem('user_token')) {
+        if(storageLock.getItem('current_user_id')) {
             this.sessionCheckup();
         }
     }
