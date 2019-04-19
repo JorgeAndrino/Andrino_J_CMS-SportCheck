@@ -6,12 +6,12 @@ function addProduct($product_img, $product_name, $product_price, $product_desc, 
 
         include('./script/connect.php');
 
-        $file_type = pathinfo($product_img['name'], PATHINFO_EXTENSION);
+        $file_type = pathInfo($product_img['name'], PATHINFO_EXTENSION);
 
         $accepted_formats = array('gif', 'png', 'jpeg', 'jpg');
 
         if(!in_array($file_type, $accepted_formats)){
-            throw new Exception('Wrong file type!');
+            throw new Exception('Wrong type of file!');
         }
 
         $target_folder = '../images/' .$product_img['name'];
@@ -42,7 +42,7 @@ function addProduct($product_img, $product_name, $product_price, $product_desc, 
 
         $category_assign_set = $pdo->prepare($category_assign_query);
 
-        $add_product_set->execute(
+        $category_product_set->execute(
 
             array(
                 ':category_id' => $category_id
