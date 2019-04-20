@@ -33,13 +33,14 @@ export default {
 
     method: {
         sessionCheckup() {
-            if(storageLock.setItem('current_user_id')) {
+            if(storageLock.setItem('current_user_id')  && storageLock.getItem('user_token')) {
                 
                 let that = this;
 
                 let sessionData = new FormData();
 
                 sessionData.append("user_id", storageLock.getItem('current_user_id'));
+                sessionData.append("user_token", storageLock.getItem('user_token'));
 
                 axios({
                     method: 'post',

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Sport Check Store</title>
+</head>
+<body>
+    
+    <main id="app">
+
+        <header>
+
+            <section>
+
+                <div>
+
+                    <a href="index.html"><h1>Sport Check</h1></a>
+
+                </div>
+                <div>
+
+                    <input type="text" name="search-bar" placeholder="Search Product Here" v-model="requestSearch" />
+                    <button v-on:click="searchFilter">Search</button>
+                    
+                </div>
+
+            </section>
+        </header>
+        <router-view></router-view>
+
+        <footer></footer>
+
+    </main>
+
+    <script type="module" src="js/app.js"></script>    
+</body>
+</html>

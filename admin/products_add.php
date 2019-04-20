@@ -11,12 +11,14 @@ function addProduct($product_img, $product_name, $product_price, $product_desc, 
         $accepted_formats = array('gif', 'png', 'jpeg', 'jpg');
 
         if(!in_array($file_type, $accepted_formats)){
+            
             throw new Exception('Wrong type of file!');
         }
 
         $target_folder = '../images/' .$product_img['name'];
 
         if(!file_upload($product_img['tmp_name'], $target_folder)) {
+
             throw new Exception('Fail to upload the image');
         }
         
