@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 15-04-2019 a las 18:37:31
+-- Tiempo de generación: 21-04-2019 a las 03:28:35
 -- Versión del servidor: 5.7.24
 -- Versión de PHP: 7.2.14
 
@@ -170,6 +170,7 @@ DROP TABLE IF EXISTS `tbl_users`;
 CREATE TABLE IF NOT EXISTS `tbl_users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_fname` varchar(30) NOT NULL,
+  `user_name` varchar(50) NOT NULL,
   `user_email` varchar(80) NOT NULL,
   `user_password` varchar(10) NOT NULL,
   PRIMARY KEY (`user_id`)
@@ -179,8 +180,8 @@ CREATE TABLE IF NOT EXISTS `tbl_users` (
 -- Volcado de datos para la tabla `tbl_users`
 --
 
-INSERT INTO `tbl_users` (`user_id`, `user_fname`, `user_email`, `user_password`) VALUES
-(1, 'George', 'admin@email.com', 'password');
+INSERT INTO `tbl_users` (`user_id`, `user_fname`, `user_name`, `user_email`, `user_password`) VALUES
+(1, 'Admin', 'George', 'admin@email.com', 'password');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
