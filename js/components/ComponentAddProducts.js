@@ -14,11 +14,11 @@ export default {
                 <input type="text" name="product_price" required />
 
                 <label for="product_desc">Description: </label>
-                <textarea></textarea>
+                <textarea name="product_desc" required></textarea>
 
                 <label for="category_id">Category: </label>
                 <select name="category_id" required>
-                    <option v-bind:value="category.category_id" v-for="categories>{{category.category_name}}</option>
+                    <option v-bind:value="category.category_id" v-for="category in categories>{{category.category_name}}</option>
                 </select>
 
                 <button v-on:click="addProduct" rows="10"> Submit </button>

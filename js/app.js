@@ -6,7 +6,6 @@ import ComponentLogin from './components/user/ComponentLogin.js';
 import ComponentEditProducts from './components/ComponentEditProducts.js';
 import ComponentSoloProduct from './components/ComponentSoloProduct.js';
 import ComponentNothingHere from './components/ComponentNothingHere.js';
-import Axios from 'axios';
 
 const routes = [
 
@@ -20,7 +19,11 @@ const routes = [
     
 ];
 
-const router = new VTTCue({
+const router = new VueRouter({
+    routes
+});
+
+const router = new Vue({
 
     data() {
 
