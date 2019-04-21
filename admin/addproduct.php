@@ -1,6 +1,6 @@
 <?php
 require_once 'scripts/config.php';
-confirm_logged_in();
+//confirm_logged_in();
 
 $tbl      = "tbl_category";
 $category_list = getAll($tbl);
