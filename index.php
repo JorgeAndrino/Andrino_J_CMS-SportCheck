@@ -1,7 +1,6 @@
 <?php require_once 'admin/scripts/config.php';
-
 if (isset($_GET['filter'])) {
-    $tbl     = 'tbl_product';
+    $tbl     = 'tbl_products';
     $tbl_2   = 'tbl_categories';
     $tbl_3   = 'tbl_product_categories';
     $col     = 'product_id';
@@ -23,14 +22,14 @@ if (isset($_GET['filter'])) {
 <body>
 	<?php include 'templates/header.php'; ?>
 
-	<?php while ($row = $results->fetch(PDO::FETCH_ASSOC)) : ?>
+	<?php while ($row = $results->fetch(PDO::FETCH_ASSOC)) :?>
 		<div>
 			<img src="images/<?php echo $row['product_img']; ?>" alt="">	
 			<h2><?php echo $row['product_name']; ?></h2>
 			<h4><?php echo $row['product_price']; ?></h4>
 			<p><?php echo $row['product_desc']; ?></p>
 		</div>
-	<?php endwhile; ?>
+	<?php endwhile; ?> 
 	<?php include 'templates/footer.php'; ?>
 </body>
 </html>

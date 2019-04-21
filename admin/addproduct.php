@@ -3,7 +3,7 @@ require_once 'scripts/config.php';
 confirm_logged_in();
 
 $tbl      = "tbl_category";
-$gen_list = getAll($tbl);
+$category_list = getAll($tbl);
 
 if (isset($_POST['submit'])) {
     $image           = $_FILES['image'];
@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
 
         <select name="categoryList">
             <option>Please select a Category...</option>
-            <?php while ($category = $gen_list->fetch(PDO::FETCH_ASSOC)): ?>
+            <?php while ($category = $category_list->fetch(PDO::FETCH_ASSOC)): ?>
                 <option value="<?php echo $category['category_id']; ?>">
                     <?php echo $category['category_name']; ?>
                 </option>
