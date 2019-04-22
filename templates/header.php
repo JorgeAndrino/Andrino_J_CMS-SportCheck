@@ -3,7 +3,7 @@
 	<nav>
 
 		<div>
-			<a href="admin/index.php"><h3>Log In</h3></a>
+			<a href="admin/admin_login.php"><h3>Log In</h3></a>
 		</div>
 
 		<ul>

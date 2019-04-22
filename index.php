@@ -9,7 +9,7 @@ if (isset($_GET['filter'])) {
     $filter  = $_GET['filter'];
     $results = filterResults($tbl, $tbl_2, $tbl_3, $col, $col_2, $col_3, $filter);
 } else {
-    $results = getAll('tbl_products');
+	$results = getAll('tbl_products');
 }
 ?>
 
@@ -22,7 +22,7 @@ if (isset($_GET['filter'])) {
 <body>
 	<?php include 'templates/header.php'; ?>
 
-	<?php while ($row = $results->fetch(PDO::FETCH_ASSOC)) :?>
+	<?php while($row = $results->fetch(PDO::FETCH_ASSOC)):?>
 		<div>
 			<img src="images/<?php echo $row['product_img']; ?>" alt="">	
 			<h2><?php echo $row['product_name']; ?></h2>

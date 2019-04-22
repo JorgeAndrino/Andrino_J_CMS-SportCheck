@@ -1,8 +1,18 @@
 <?php
-require_once('scripts/config.php');
-confirm_logged_in();
+require_once 'config.php';
 
-if (isset($_GET['delete'])) {
-  $delete_product_id =  $_GET['delete'];
-  deleteItem($delete_product_id);
+if (isset($_GET['caller_id'])) {
+    $action = $_GET['caller_id'];
+
+    switch ($action) {
+        case 'logout':
+            logged_out();
+            break;
+
+        case 'delete':
+            $id = $_GET['id'];
+            deleteUser($id);
+            break;
+    }
+
 }

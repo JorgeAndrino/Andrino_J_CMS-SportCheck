@@ -30,8 +30,8 @@ function addProduct($image, $name, $price, $description, $category)
         $insert_product_query = 'INSERT INTO tbl_product(product_img, product_name, product_price, product_desc';
         $insert_product_query .= ' VALUES(:product_img, :product_name, :product_price, :product_desc';
 
-        $insert_product  = $pdo->prepare($insert_movie_query);
-        $insert_result = $insert_movie->execute(
+        $insert_product  = $pdo->prepare($insert_product_query);
+        $insert_result = $insert_product->execute(
             array(
                 ':product_img'      => $image['name'],
                 ':product_name'     => $title,

@@ -7,13 +7,13 @@ confirm_logged_in();
 $id             = $_SESSION['product_id'];
 $tbl            = 'tbl_products';
 $col            = 'product_id';
-$found_user_set = getSingle($tbl, $col, $id);
+$found_product_set = getSingle($tbl, $col, $id);
 
 if (isset($_POST['submit'])) {
-    $name        = trim($_POST['name']);
-    $price       = trim($_POST['price']);
-    $description = trim($_POST['description']);
-    $image       = trim($_POST['image']);
+    $name        = trim($_POST['product_name']);
+    $price       = trim($_POST['product_price']);
+    $description = trim($_POST['product_desc']);
+    $image       = trim($_POST['product_img']);
 
     //Validation??
     if (empty($name) || empty($price) || empty($description) || empty($image)) {
@@ -50,7 +50,7 @@ if (is_string($found_product_set)) {
 			<input type="text" name="price" value="<?php echo $found_product['product_price']; ?>" id="price"><br><br>
 
 			<label for="description">Description:</label>
-			<input type="text" name="description" value="<?php echo $found_product['product_description']; ?>" id="description"><br><br>
+			<input type="text" name="description" value="<?php echo $found_product['product_desc']; ?>" id="description"><br><br>
 
 			<label for="image">Image:</label>
 			<input type="file" name="image" value="<?php echo $found_product['product_img']; ?>" id="image"><br><br>

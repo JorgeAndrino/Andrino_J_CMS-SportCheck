@@ -1,18 +1,19 @@
 <?php
 require_once 'scripts/config.php';
-//confirm_logged_in();
+confirm_logged_in();
 
 $tbl      = "tbl_category";
-$category_list = getAll($tbl);
+$tbl_2    = "tbl_products";
+$category_list = getAll($tbl, $tbl_2);
 
 if (isset($_POST['submit'])) {
-    $image           = $_FILES['image'];
-    $name            = $_POST['name'];
-    $price           = $_POST['price'];
-    $description     = $_POST['description'];
-    $category        = $_POST['category'];
+    $image           = $_FILES['product_img'];
+    $name            = $_POST['product_name'];
+    $price           = $_POST['product_price'];
+    $description     = $_POST['product_desc'];
+    $category        = $_POST['category_name'];
 
-    $result  = addProduct($imgage, $name, $price, $description, $category);
+    $result  = addProduct($image, $name, $price, $description, $category);
     $message = $result;
 }
 ?>
@@ -44,7 +45,7 @@ if (isset($_POST['submit'])) {
 
         <select name="categoryList">
             <option>Please select a Category...</option>
-            <?php while ($category = $category_list->fetch(PDO::FETCH_ASSOC)): ?>
+            <?php while ($category = $category_list->fetch(PDO::FETCH_BOTH)): ?>
                 <option value="<?php echo $category['category_id']; ?>">
                     <?php echo $category['category_name']; ?>
                 </option>
